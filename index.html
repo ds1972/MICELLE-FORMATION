@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micelle Formation Simulation</title>
+    <meta name="description" content="Interactive simulation of soap molecules forming micelles around oil particles.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Micelle Formation Simulation</h1>
+            <p>Observe how soap molecules interact with water and oil to form micelles.</p>
+        </header>
+
+        <main>
+            <div class="simulation-area">
+                <canvas id="simCanvas"></canvas>
+            </div>
+            
+            <aside class="controls-panel">
+                <div class="legend glass-panel">
+                    <h2>Molecular Structure</h2>
+                    <div class="legend-item">
+                        <div class="molecule-icon">
+                            <span class="head"></span>
+                            <span class="tail"></span>
+                        </div>
+                        <div class="legend-text">
+                            <strong>Soap Molecule</strong>
+                            <span class="hydrophilic">🔵 Hydrophilic Head (Water-loving)</span>
+                            <span class="hydrophobic">〰️ Hydrophobic Tail (Water-hating)</span>
+                        </div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="oil-icon"></div>
+                        <div class="legend-text">
+                            <strong>Oil / Dirt Particle</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls glass-panel">
+                    <h2>Simulation Controls</h2>
+                    <button id="addOilBtn" class="btn primary">Add Oil Drops</button>
+                    <button id="formMicellesBtn" class="btn secondary">Form Micelles</button>
+                    <button id="washBtn" class="btn" style="background: linear-gradient(135deg, #0ea5e9, #2563eb); color: white; border: none; transition: transform 0.2s, box-shadow 0.2s;">Wash with Water</button>
+                    <button id="resetBtn" class="btn outline">Reset Simulation</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

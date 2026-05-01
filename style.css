@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #09090b 0%, #171720 100%);
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    width: 95vw;
+    max-width: 1400px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    min-height: 0;
+}
+
+.simulation-area {
+    flex: 1;
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.controls-panel {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.glass-panel {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.molecule-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+}
+
+.molecule-icon .head {
+    width: 24px;
+    height: 24px;
+    background: #38bdf8;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #38bdf8;
+    z-index: 2;
+}
+
+.molecule-icon .tail {
+    width: 6px;
+    height: 37.5px;
+    background: #fbbf24;
+    border-radius: 3px;
+    margin-top: -3px;
+}
+
+.oil-icon {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle at 30% 30%, #a3e635, #4d7c0f);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(163, 230, 53, 0.4);
+}
+
+.legend-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    gap: 4px;
+}
+
+.legend-text strong {
+    color: #f8fafc;
+    font-size: 1rem;
+}
+
+.hydrophilic { color: #7dd3fc; }
+.hydrophobic { color: #fde047; }
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #a3e635, #65a30d);
+    color: white;
+}
+.btn.primary:hover {
+    box-shadow: 0 0 20px rgba(163, 230, 53, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    color: white;
+}
+.btn.secondary:hover {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn.outline {
+    background: transparent;
+    color: #e2e8f0;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.btn.outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #f8fafc;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+    .controls-panel {
+        width: 100%;
+        flex-direction: row;
+        overflow-y: visible;
+        overflow-x: auto;
+    }
+    .glass-panel {
+        flex: 1;
+        min-width: 300px;
+    }
+}
